@@ -32,7 +32,7 @@ fn main() {
 
     let producer_thread = thread::spawn(move || {
         // Component A: produces messages and sends them (moves ownership)
-        for i in 0..3 {
+        for i in 4..8 {
             let msg = Message {
                 id: i,
                 payload: format!("payload {}", i),
@@ -70,7 +70,7 @@ fn main() {
 
     let producer_serialized = thread::spawn(move || {
         // Component A: serializes Message into JSON bytes and sends
-        for i in 10..13 {
+        for i in 20..24 {
             let msg = Message {
                 id: i,
                 payload: format!("serialized {}", i),
